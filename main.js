@@ -454,9 +454,13 @@ const $app = new Vue({
             for (var i = this.typeConfig; i < STRUCTURE.length; i++) {
                 const typeData = STRUCTURE[i];
                 const miniBuffer = buffer.readBufferBytes(typeData.bytes);
+                var arrayBits = renderSpaces(typeData.bytes, 8);
+                var arrayHexa = transformToHexadecimal(arrayBits).join(' ');
                 if (miniBuffer != null) {
                     this.lines.push("=============================================");
                     this.lines.push("<h3>" + typeData.title + "</h3>");
+                    this.lines.push(arrayBits.join(' '));
+                    this.lines.push(arrayHexa);
                     this.lines.push("=============================================");
                     typeData.execute(miniBuffer);
                 }
