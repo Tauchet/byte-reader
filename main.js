@@ -242,7 +242,7 @@ BufferString.prototype.readAddress = function () {
     const arrayDecimal = [];
     for (var item of arrayBits) {
         const number = parseInt(item, 2);
-        arrayHexa.push(number.toString(16));
+        arrayHexa.push(formatSpaces(number.toString(16), 2));
         arrayDecimal.push(number);
     }
     return {
