@@ -1,5 +1,5 @@
 const data = "c3 24 1f 90 b0 a4 65 ec fe 1c a7 84 50 18 40 29 e3 00 00 00";
-const charForBits = 4;
+var charForBits = 4;
 const BITS_FOR_BYTE = 8;
 
 const ICMP_TYPES = {
@@ -282,13 +282,18 @@ function escapeHTML(s) {
 
 BufferString.prototype.readHTTP = function (log) {
 
-    log.push("=============================================");
-    log.push("<h3>HTTP</h3>");
-    log.push("=============================================");
+    
 
     const bits = this.readRemainingBits();
     const arrayBits = renderSpaces(bits, 8);
     const hexa = transformToHexadecimal(arrayBits);
+
+    log.push("=============================================");
+    log.push("<h3>HTTP</h3>");
+    log.push("<p>" + hexa.join(' ') + "</p>");
+    log.push("<p>" + arrayBits.join(' ') + "</p>");
+    log.push("=============================================");
+
     const chars = [];
 
     var tempChars = [];
@@ -378,7 +383,8 @@ const $app = new Vue({
         return {
             typeConfig: 0,
             data: '',
-            lines: []
+            lines: [],
+            bitsForChar: 4
         }
     },
     computed: {
@@ -388,6 +394,9 @@ const $app = new Vue({
     },
     methods: {
         clicked() {
+            
+
+            charForBits = this.bitsForChar;
 
             this.lines = [];
             const log = this.lines;

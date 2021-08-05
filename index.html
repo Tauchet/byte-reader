@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ByteReader</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <div id="app-panel">
-            <select name="" id="" v-model.number="typeConfig">
-                <option value="0">Frame</option>
-                <option value="1">Datagrama</option>
-                <option value="2">Segmento</option>
-            </select>
-            <textarea v-model="data" name="" id="" cols="30" rows="20"></textarea>
+            <div class="form">
+                <label for="">DATOS EN:</label>
+                <select name="" id="" v-model.number="bitsForChar">
+                    <option value="1">Binario</option>
+                    <option value="4">Hexadecimal</option>
+                </select>
+            </div>
+            <div class="form">
+                <label for="">INICIA DESDE:</label>
+                <select name="" id="" v-model.number="typeConfig">
+                    <option value="0">Frame</option>
+                    <option value="1">Datagrama</option>
+                    <option value="2">Segmento</option>
+                </select>
+            </div>
+            <div class="form">
+                <label for="">CONTENIDO:</label>
+                <textarea v-model="data" name="" id="" cols="30" rows="20"></textarea>
+            </div>
             <button @click="clicked">Ejecutar</button>
         </div>
         <div id="app-result">
