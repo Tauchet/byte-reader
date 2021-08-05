@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="app-panel">
+            <select name="" id="" v-model.number="typeConfig">
+                <option value="0">Frame</option>
+                <option value="1">Datagrama</option>
+                <option value="2">Segmento</option>
+            </select>
+            <textarea v-model="data" name="" id="" cols="30" rows="20"></textarea>
+            <button @click="clicked">Ejecutar</button>
+        </div>
+        <div id="app-result">
+            <div v-html="log"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="/main.js"></script>
+</body>
+</html>

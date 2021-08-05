@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier Prime', monospace;
+}
+
+html, body, #app {
+    height: 100%;
+    width: 100%;
+}
+#app {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.item-name {
+    margin: 1rem 0;
+}
+
+.item-content {
+    padding: 1rem;
+    background-color: #ddd;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+#app-result {
+    overflow-y: auto;
+}
+
+#app-panel {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.5rem;
+}
+
+.line:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.line p:first-child {
+    font-weight: bold;
+}
